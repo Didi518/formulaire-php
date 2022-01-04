@@ -17,8 +17,20 @@
     $mail = $_GET["mail"];
     $tel = $_GET["tel"];
     $adresse = $_GET["adresse"];
-    echo $firstName." ".$lastName." ".$mail." ".$tel." ".$adresse;
-    ?> ;
+    $data = [$firstName, $lastName, $mail, $tel, $adresse];
+    $Err = "";
+
+    for($i = 0; $i <= 4; $i++){
+        if (!($data[$i])) {
+            $Err = "Champs Manquants";
+            echo '<div class="alert">'.$Err.'</div>';
+            break;
+        }
+    }
+    if(!$Err){
+        print_r($data);
+    }
+    ?>
 </body>
 
 </html>
