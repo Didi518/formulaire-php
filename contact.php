@@ -26,9 +26,14 @@
             echo '<div class="alert">'.$Err.'</div>';
             break;
         }
+        
     }
     if(!$Err){
         print_r($data);
+    }
+    if(str($firstName) < 3) {
+        $Err = "Le prénom doit comporter 3 lettres au moins.";
+        echo '<div class="alert">'.$Err.'</div>';
     }
     ?>
 </body>
