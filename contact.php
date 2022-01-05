@@ -12,17 +12,17 @@
 <body>
 
     <?php
-    $firstName = $_GET["prenom"];
-    $lastName = $_GET["nom"];
-    $mail = $_GET["mail"];
-    $tel = $_GET["tel"];
-    $adresse = $_GET["adresse"];
+    $firstName = $_POST["prenom"];
+    $lastName = $_POST["nom"];
+    $mail = $_POST["mail"];
+    $tel = $_POST["tel"];
+    $adresse = $_POST["adresse"];
     $data = [$firstName, $lastName, $mail, $tel, $adresse];
     $Err = "";
 
     for($i = 0; $i <= 4; $i++){
         if (!($data[$i])) {
-            $Err = "Champs Manquants";
+            $Err = "Champs manquant(s)";
             echo '<div class="alert">'.$Err.'</div>';
             break;
         }
